@@ -1,9 +1,26 @@
 name: Build & Publish Release APK
 
+# on:
+#   push:
+#     tags:
+#       - '*'
+      
+      
 on:
-  push:
-    tags:
-      - '*'
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+      
+      
+      
+      
+      
+      
+      
 
 jobs:
   Gradle:
