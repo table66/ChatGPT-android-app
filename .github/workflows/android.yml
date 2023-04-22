@@ -36,6 +36,9 @@ jobs:
       run: chmod +x ./gradlew
     - name: Build Release APK
       run: ./gradlew assembleRelease
+      
+            find -name "*.apk"
+
 #     - name: Releasing using Hub
 #       uses: r0user/release-apk@main
 #       env:
@@ -45,9 +48,11 @@ jobs:
        
 #        APP_FOLDER: app
     - name: Upload APK
+
       uses: actions/upload-artifact@v2
       with:
           # 设置压缩文件的名称，在控制台会得到WhuHelper-debug.zip文件的下载链接
           # 下载后解压缩，里面直接可以看到app-debug.apk，没有其他东西
           name: WhuHelper-debug
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: find . -name "*.apk" -printf "%p\n"
+
