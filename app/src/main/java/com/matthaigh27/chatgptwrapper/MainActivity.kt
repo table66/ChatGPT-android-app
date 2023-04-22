@@ -5,6 +5,7 @@ import android.app.Activity
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -15,6 +16,7 @@ class MainActivity : Activity() {
     private val userAgent =
         "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.5563.57 Mobile Safari/537.36"
     private val chatUrl = "https://chat.openai.com/"
+//    private val chatUrl = "https://blog.csdn.net/shulianghan/article/details/119642522"
     private lateinit var binding: ActivityMainBinding
     private lateinit var webView: WebView
 
@@ -55,5 +57,9 @@ class MainActivity : Activity() {
             webView.goBack()
         else
             super.onBackPressed()
+    }
+
+    fun reflashpaper(view: View) {
+        webView.reload();
     }
 }
