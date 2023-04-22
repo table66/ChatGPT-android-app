@@ -2,6 +2,8 @@
 
 ## About
 
+Add reflash buttom!
+
 This (unofficial) app acts as a webview wrapper for [chat.openai.com](https://chat.openai.com)
 
 
